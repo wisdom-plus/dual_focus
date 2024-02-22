@@ -1,0 +1,3 @@
+queues:
+  - [default, 1]
+  - [mailers, 5]
