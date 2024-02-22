@@ -6,7 +6,8 @@ ruby "3.3.0"
 gem "rails", "~> 7.1.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+# gem "sprockets-rails"
+gem 'propshaft'
 
 # Use sqlite3 as the database for Active Record
 # gem "sqlite3", "~> 1.4"
@@ -28,6 +29,11 @@ gem "stimulus-rails"
 gem "tailwindcss-rails"
 
 gem "authentication-zero", "~> 3.0"
+
+gem 'rails-i18n'
+gem 'slim-rails'
+gem 'view_component'
+gem 'view_component-contrib'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
@@ -52,11 +58,26 @@ gem "image_processing", "~> 1.2"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'pry-rails'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem 'html2slim'
+  gem 'annotate'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'brakeman', require: false
+  gem 'bullet'
+  gem 'letter_opener_web'
+  gem 'ruby-lsp'
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-capybara', require: false
+  gem 'rubocop-factory_bot', require: false
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -67,11 +88,9 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
   gem "selenium-webdriver"
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'capybara'
 end
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-gem "bcrypt", "~> 3.1.7"
