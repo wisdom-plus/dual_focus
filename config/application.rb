@@ -41,6 +41,7 @@ module DualFocus
     config.generators.template_engine = :slim
     config.generators.system_tests = nil
     config.i18n.default_locale = :ja
+    cofnig.i18n.available_locales = %i[ja en]
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
     config.generators do |g|
