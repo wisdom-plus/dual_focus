@@ -1,0 +1,37 @@
+ja:
+  sessions:
+    create:
+      notice: "ログインに成功しました"
+      alert: "ログインに失敗しました"
+    destroy:
+      notice: "ログアウトしました"
+  registrations:
+    create:
+      notice: "ようこそ! 登録に成功しました"
+  passwords:
+    update:
+      notice: "パスワードを再設定しました"
+  identify:
+    password_resets:
+      create:
+        notice: "パスワード再設定のためのメールを送信しました"
+        alert: "メールを確認するまで、パスワードをリセットすることはできません。"
+      update:
+        notice: "パスワードを再設定しました。再度ログインしてください"
+      set_user:
+        alert: "パスワード再設定の有効期限が切れています。再度パスワード再設定を行ってください"
+    email_verifications:
+      show:
+        notice: "メールアドレスの確認が完了しました"
+      create:
+        notice: "確認メールを送信しました"
+      set_user:
+        alert: "メールアドレスの確認の有効期限が切れています。再度メールアドレスの確認を行ってください"
+    emails:
+      redirect_to_root:
+        notice: "メールアドレスの変更が完了しました"
+  user_mailer:
+    password_reset:
+      subject: "パスワード再設定"
+    email_verification:
+      subject: "メールアドレスの確認"

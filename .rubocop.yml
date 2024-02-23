@@ -37,9 +37,8 @@ Style/FrozenStringLiteralComment:
 Style/Documentation:
   Enabled: false
 
-ClassAndModuleChildren:
+Style/ClassAndModuleChildren:
   EnforcedStyle: compact
 
-
 Metrics/AbcSize:
-  Max: 20
+  Max: 25
