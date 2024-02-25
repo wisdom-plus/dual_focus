@@ -12,10 +12,16 @@
   <%= link_to "Change email address", edit_identity_email_path %>
 </div>
 
+<%= button_to "Signin as last user", user_masquerade_path(User.last) %>
+
 <h2>Access history</h2>
 
 <div>
   <%= link_to "Devices & Sessions", sessions_path %>
+</div>
+
+<div>
+  <%= link_to "Activity Log", authentications_events_path %>
 </div>
 
 <br>

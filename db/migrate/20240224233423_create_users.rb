@@ -3,8 +3,6 @@ class CreateUsers < ActiveRecord::Migration[7.1]
     create_table :users do |t|
       t.string :email,           null: false, index: { unique: true }
       t.string :password_digest, null: false
-      t.string :first_name,      null: false
-      t.string :last_name,       null: false
       t.string :nickname
       t.string :uuid,            null: false, index: { unique: true }
 

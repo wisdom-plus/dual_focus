@@ -16,4 +16,13 @@ class ApplicationController < ActionController::Base
     Current.user_agent = request.user_agent
     Current.ip_address = request.ip
   end
+
+  def require_lock(wait: 1.hour, attempts: 10)
+    counter = Kredis.counter("require_lock:#{request.remote_ip}:#{controller_path}:#{action_name}", expires_in: wait)
+    counter.increment
+
+    return unless counter.value > attempts
+
+    redirect_to root_path, alert: t('.alert')
+  end
 end
