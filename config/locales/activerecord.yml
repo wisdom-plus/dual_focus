@@ -1,0 +1,6 @@
+ja:
+  activerecord:
+    attributes:
+      errors:
+        messages:
+          not_pwned: "は既知のパスワードリークに関連しています。"

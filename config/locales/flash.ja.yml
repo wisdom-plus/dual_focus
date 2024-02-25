@@ -1,4 +1,7 @@
 ja:
+  application:
+    require_lock:
+      alert: "試行回数の上限を超えました。"
   sessions:
     create:
       notice: "ログインに成功しました"
@@ -11,6 +14,11 @@ ja:
   passwords:
     update:
       notice: "パスワードを再設定しました"
+  masqueraades:
+    create:
+      notice: "ログインしました"
+    authorize:
+      alert: '開発環境です'
   identify:
     password_resets:
       create:

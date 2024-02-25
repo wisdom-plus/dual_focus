@@ -157,6 +157,10 @@ GEM
       rdoc
       reline (>= 0.4.2)
     json (2.7.1)
+    kredis (1.7.0)
+      activemodel (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      redis (>= 4.2, < 6)
     language_server-protocol (3.17.0.3)
     launchy (2.5.2)
       addressable (~> 2.8)
@@ -226,8 +230,10 @@ GEM
     public_suffix (5.0.4)
     puma (6.4.2)
       nio4r (~> 2.0)
+    pwned (2.4.1)
     racc (1.7.3)
     rack (3.0.9.1)
+    rack-ratelimit (1.2.1)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -271,6 +277,7 @@ GEM
     rake (13.1.0)
     rdoc (6.6.2)
       psych (>= 4.0.0)
+    redis (4.8.1)
     regexp_parser (2.9.0)
     reline (0.4.2)
       io-console (~> 0.5)
@@ -411,13 +418,17 @@ DEPENDENCIES
   html2slim
   image_processing (~> 1.2)
   importmap-rails
+  kredis
   letter_opener_web
   litestack
   propshaft
   pry-rails
   puma (>= 5.0)
+  pwned
+  rack-ratelimit
   rails (~> 7.1.3)
   rails-i18n
+  redis (~> 4.0)
   rspec-rails
   rubocop
   rubocop-capybara

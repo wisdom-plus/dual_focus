@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root "home#index"
+  get "up" => "rails/health#show", as: :rails_health_check
+
+  namespace :authentications do
+    resources :events, only: :index
+  end
+  post "users/:user_id/masquerade", to: "masquerades#create", as: :user_masquerade
   get  "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"
   get  "sign_up", to: "registrations#new"
@@ -10,13 +17,4 @@ Rails.application.routes.draw do
     resource :email_verification, only: [:show, :create]
     resource :password_reset,     only: [:new, :edit, :create, :update]
   end
-  root "home#index"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
-  # root "posts#index"
 end
