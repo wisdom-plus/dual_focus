@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include UuidGenerator
   has_secure_password
 
   generates_token_for :email_verification, expires_in: 2.days do
@@ -8,11 +9,10 @@ class User < ApplicationRecord
     password_salt.last(10)
   end
 
-
   has_many :sessions, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :password, allow_nil: true, length: { minimum: 12 }
+  validates :password, allow_nil: true, length: { minimum: 8 }
 
   normalizes :email, with: -> { _1.strip.downcase }
 

@@ -20,6 +20,8 @@ Bundler.require(*Rails.groups)
 
 module DualFocus
   class Application < Rails::Application
+    config.autoload_paths << Rails.root.join("app", "views", "components")
+    config.view_component.preview_paths << Rails.root.join("app", "views", "components")
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
@@ -39,6 +41,7 @@ module DualFocus
     config.generators.template_engine = :slim
     config.generators.system_tests = nil
     config.i18n.default_locale = :ja
+    config.i18n.available_locales = %i[ja en]
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
     config.generators do |g|
